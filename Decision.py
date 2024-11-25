@@ -1,7 +1,19 @@
-fruits = ["Pomme", "avocat", "ananas"]
-len(fruits) > 5
-'citron' in fruits
-'avocat' in fruits
-annuaire = {'kevin': '0606060606', 'radji': '06466548454', 'sos': '911'}
-"kevin" in annuaire
-"kevn" in annuaire
+import random
+
+def guess_the_number():
+    number = random.randint(1, 100)
+    print("I'm thinking of a number between 1 and 100.")
+    attempts = 0
+
+    while True:
+        guess = int(input("Your guess: "))
+        attempts += 1
+        if guess < number:
+            print("Too low!")
+        elif guess > number:
+            print("Too high!")
+        else:
+            print(f"Congrats! You guessed it in {attempts} attempts.")
+            break
+
+guess_the_number()
